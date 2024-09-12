@@ -1,0 +1,29 @@
+{
+  "name": "kopickik.github.io",
+  "version": "1.0.0",
+  "description": "kopickik.github.io ==================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rspress dev",
+    "build": "rspress build",
+    "preview": "rspress preview"
+  },
+  "keywords": [],
+  "author": "Kyle Kopicki <kyle.kopicki@gmail.com>",
+  "license": "GPL-2.0-only",
+  "devDependencies": {
+    "@iconify-json/simple-icons": "^1.2.1",
+    "rspress": "^1.29.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@shadcn/ui": "^0.0.4",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.7",
+    "postcss": "^8.4.45",
+    "react": "^18.3.1",
+    "tailwindcss": "^3.4.10"
+  }
+}
