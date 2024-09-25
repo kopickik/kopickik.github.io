@@ -1,101 +1,70 @@
-import Image from "next/image";
+'use client';
+
+import Image from 'next/image';
+
+import Footer from '@/components/footer';
+import { useState } from 'react';
+import ChallengeButtons from '@/components/ChallengeButtons';
+import CharacterSelect from '@/components/CharacterSelect';
+import Results from '@/components/Results';
+import CharacterStats from '@/components/CharacterStats';
+import MainNav from '@/components/ui/main-nav';
+
+type Character = {
+  name: string;
+  gambling: number;
+  battle: number;
+  chess: number;
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [player1, setPlayer1] = useState(null);
+  const [player2, setPlayer2] = useState(null);
+  const [result, setResult] = useState('');
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const characters = [
+    { name: 'Knight', gambling: 5, battle: 10, chess: 4 },
+    { name: 'Wizard', gambling: 3, battle: 4, chess: 5 },
+    { name: 'Rogue', gambling: 8, battle: 6, chess: 3 },
+    { name: 'Thief', gambling: 4, battle: 7, chess: 2 },
+    { name: 'Lord', gambling: 2, battle: 3, chess: 3 },
+    { name: 'Viscount', gambling: 1, battle: 7, chess: 5 },
+    { name: 'Marxis', gambling: 4, battle: 3, chess: 4 },
+    { name: 'Siren', gambling: 6, battle: 7, chess: 8 },
+    { name: 'Homer', gambling: 8, battle: 8, chess: 7 },
+    { name: 'Fluffykins', gambling: 3, battle: 10, chess: 6 },
+  ];
+
+  const handleResult = (outcome: string) => setResult(outcome);
+
+  return (
+    <div className="container">
+      <MainNav />
+      <main className="flex-grow grid grid-cols-4 grid-rows-4 gap-4 p-4">
+        <div id="player1-select" className="col-span-2">
+          <CharacterSelect
+            label="Player 1"
+            characters={characters}
+            selectedCharacter={player1}
+            setSelectedCharacter={setPlayer1}
+          />
+        </div>
+        <div id="player2-select" className="col-span-2">
+          <CharacterSelect
+            label="Player 2"
+            characters={characters}
+            selectedCharacter={player2}
+            setSelectedCharacter={setPlayer2}
+          />
+        </div>
+        <div id="challenge-buttons" className="col-start-2 col-span-2">
+          <ChallengeButtons player1={player1} player2={player2} handleResult={handleResult} />
+        </div>
+        <div id="results" className="col-span-5 text-center p-4">
+          <Results result={result} />
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <Footer></Footer>
     </div>
   );
 }
