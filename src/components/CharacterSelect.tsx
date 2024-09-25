@@ -30,30 +30,35 @@ export default function CharacterSelect({
   setSelectedCharacter,
 }: CharacterSelectProps) {
   return (
-    <div className="min-w-36 w-full">
-      <div id="character-select" className="my-8">
-        <h2 className="text-xl font-semibold mb-4">{label}</h2>
-        <Select
-          onValueChange={(value) => {
-            const selected = characters.find((char) => char.name === value);
-            if (selected) setSelectedCharacter(selected);
-          }}
-        >
-          <SelectTrigger className="w-full bg-gray-800 border border-gray-700">
-            <SelectValue
-              placeholder={selectedCharacter ? selectedCharacter.name : 'Select a character'}
-            />
-          </SelectTrigger>
-          <SelectContent>
-            {characters.map((character, index) => (
-              <SelectItem key={index} value={character.name}>
-                {character.name}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+    <div className="grid grid-cols-2 gap-4">
+      <div id="character-select-box" className="character-select-box">
+        {label}
       </div>
-      <CharacterStats character={selectedCharacter} />
     </div>
+    // <div className="min-w-36 w-full">
+    //   <div id="character-select" className="my-8">
+    //     <h2 className="text-xl font-semibold mb-4">{label}</h2>
+    //     <Select
+    //       onValueChange={(value) => {
+    //         const selected = characters.find((char) => char.name === value);
+    //         if (selected) setSelectedCharacter(selected);
+    //       }}
+    //     >
+    //       <SelectTrigger className="w-full bg-gray-800 border border-gray-700">
+    //         <SelectValue
+    //           placeholder={selectedCharacter ? selectedCharacter.name : 'Select a character'}
+    //         />
+    //       </SelectTrigger>
+    //       <SelectContent>
+    //         {characters.map((character, index) => (
+    //           <SelectItem key={index} value={character.name}>
+    //             {character.name}
+    //           </SelectItem>
+    //         ))}
+    //       </SelectContent>
+    //     </Select>
+    //   </div>
+    //   <CharacterStats character={selectedCharacter} />
+    // </div>
   );
 }

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import spsvg from '../../img/spoonfedweb.svg';
 import BoardD from './board-d';
 import Footer from '@/components/footer';
+import Link from 'next/link';
 
 export default function Krunchbots() {
   return (
@@ -9,7 +10,9 @@ export default function Krunchbots() {
       <div className="bg-one main-bg min-h-screen bg-center bg-cover bg-no-repeat">
         <div className="overlay-bg">
           <div className="flex justify-center p-4">
-            <Image src={spsvg} alt="spoonfedweb" className="object-cover" height={280} />
+            <Link href="/">
+              <Image src={spsvg} alt="spoonfedweb" className="object-cover" height={280} />
+            </Link>
           </div>
           <div className="flex flex-col space-y-16 text-yellow-300">
             <div className="md:text-8xl text-6xl text-center pt-16 font-extrabold font-honk px-6">
