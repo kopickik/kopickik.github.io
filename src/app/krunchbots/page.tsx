@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import spsvg from '../../img/spoonfedweb.svg';
+import spicon from '../../img/spfw-icon.svg';
 import BoardD from './board-d';
 import Footer from '@/components/footer';
 import Link from 'next/link';
@@ -14,6 +15,7 @@ export default function Krunchbots() {
               <Image src={spsvg} alt="spoonfedweb" className="object-cover" height={280} />
             </Link>
           </div>
+          <Image src={spicon} alt="test" height={192} />
           <div className="flex flex-col space-y-16 text-yellow-300">
             <div className="md:text-8xl text-6xl text-center pt-16 font-extrabold font-honk px-6">
               SELECT YOUR OPPONENT

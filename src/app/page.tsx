@@ -38,7 +38,7 @@ export default function Home() {
   const handleResult = (outcome: string) => setResult(outcome);
 
   return (
-    <div className="container">
+    <div className="">
       <MainNav />
       <main className="flex-grow grid grid-cols-4 grid-rows-4 gap-4 p-4">
         <div id="player1-select" className="col-span-2">
