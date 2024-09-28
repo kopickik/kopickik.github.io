@@ -1,0 +1,78 @@
+.board-d {
+  [class^='name'] {
+    font-size: 1.5rem;
+    line-height: 1.2rem;
+  }
+  [class^='c-'] {
+    min-height: 260px;
+    background: url('../../../img/sprites.png');
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    & .c-text-holder {
+      border-color: transparent;
+      border-width: 1rem;
+    }
+    & .c-text-holder:is(:hover, :active, :focus) {
+      border-color: hsl(30, 74%, 50%);
+      animation: borderHueRotate 4s infinite alternate, reverse, normal, ease-in-out,
+        pulse 0.4s forwards;
+    }
+  }
+  .c-1 {
+    background-position: 49em 62em;
+    width: 12em;
+  }
+  .c-2 {
+    background-position: 61em 61em;
+    width: 12.4em;
+  }
+  .c-3,
+  .shreder {
+    background-position: 27.3em 62em;
+    width: 12.4em;
+  }
+  .c-4,
+  .dynamo {
+    background-position: 15em 62em;
+    width: 11.4em;
+  }
+  .c-5,
+  .predator {
+    height: 18em;
+    background-position: 49.4em 22em;
+    width: 13em;
+  }
+  .c-6 {
+    background-position: 61em 41em;
+    width: 12em;
+  }
+  .c-7 {
+    background-position: 49.1em 41em;
+    width: 11.8em;
+  }
+  .c-8 {
+    background-position: 37.5em 41em;
+    width: 11.4em;
+  }
+  .c-9 {
+    background-position: 15.6em 41em;
+    width: 12.4em;
+  }
+  .c-10,
+  .slingerland {
+    height: 18em;
+    background-position: 60.2em 21em;
+    width: 11.1em;
+  }
+}
+
+@keyframes borderHueRotate {
+  0% {
+    border-color: hsl(0, 100%, 50%);
+  }
+  50% {
+    border-color: hsl(180, 100%, 50%);
+  }
+  100% {
+    border-color: hsl(360, 100%, 50%);
+  }
+}

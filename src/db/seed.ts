@@ -1,4 +1,4 @@
-import { db } from '.';
+import { db } from './index';
 import { characters as charactersTable } from './schema';
 
 type Character = {
@@ -41,10 +41,8 @@ const charactersData: Character[] = [
 
 async function seedDb() {
   try {
-    await db.delete(charactersTable).run();
-    for (const char of charactersData) {
-      await db.insert(charactersTable).values(char).run();
-    }
+    await db.delete(charactersTable);
+    await db.insert(charactersTable).values(charactersData);
 
     console.log(`Characters seeded!`);
   } catch (err) {

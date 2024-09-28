@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { db } from '../../db';
-import { duels } from '../../db/schema';
+import { db } from '../db';
+import { duels } from '../db/schema';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
