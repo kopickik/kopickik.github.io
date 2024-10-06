@@ -8,6 +8,7 @@ import {
 import CharacterStats from './CharacterStats';
 
 export interface Character {
+  id: number;
   name: string;
   experience?: string;
   ai?: string;

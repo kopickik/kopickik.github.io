@@ -29,6 +29,7 @@ export const duels = sqliteTable('duels', {
 
 export type InsertCharacter = typeof characters.$inferInsert;
 export type SelectCharacter = typeof characters.$inferSelect;
+export type Character = typeof characters.$inferSelect;
 
 export type InsertDuel = typeof duels.$inferInsert;
 export type SelectDuel = typeof duels.$inferSelect;

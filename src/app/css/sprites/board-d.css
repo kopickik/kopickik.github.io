@@ -67,10 +67,13 @@
 
 @keyframes borderHueRotate {
   0% {
-    border-color: hsl(0, 100%, 50%);
+    border-color: hsl(233, 100%, 50%);
   }
   50% {
-    border-color: hsl(180, 100%, 50%);
+    border-color: hsl(180, 100%, 48%);
+  }
+  75% {
+    border-color: hsl(110, 100%, 50%);
   }
   100% {
     border-color: hsl(360, 100%, 50%);

@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import { Character } from './CharacterSelect';
+import { Character } from '@/db/schema';
 
 interface CharacterCardProps {
   character: Character;
 }
 
-export default function CharacterCard({ character }) {
+const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
   return (
     <div className={`c-${character.id} rounded-lg`} tabIndex={0}>
       <div className="text-transparent focus:bg-gradient-to-tr hover:bg-gradient-to-tr from-slate-950 grow c-text-holder text-xs hover:text-emerald-200 focus:text-emerald-200 p-2 font-semibold rounded-md cursor-pointer h-full">
@@ -23,4 +23,6 @@ export default function CharacterCard({ character }) {
       </div>
     </div>
   );
-}
+};
+
+export default CharacterCard;
