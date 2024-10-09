@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { InferSelectModel } from 'drizzle-orm';
 import { characters } from '@/db/schema';
 import { db } from '@/db';
+import Spicon from '@/components/ui/Spicon';
 
 type Character = InferSelectModel<typeof characters>;
 
@@ -22,7 +23,7 @@ export default async function Krunchbots() {
             </Link>
           </div>
           <div className="flex justify-center p-4">
-            <Image src={spicon} alt="test" height={192} />
+            <Spicon />
           </div>
           <div className="flex justify-center space-y-16 text-yellow-300">
             <div className="md:text-8xl text-6xl text-center pt-16 font-extrabold font-honk px-6">
