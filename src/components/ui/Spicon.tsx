@@ -89,7 +89,9 @@ const Spicon = () => {
             onMouseLeave={() => setIsHovered(false)}
             onBlur={() => setIsHovered(false)}
             onFocus={() => setIsHovered(true)}
+            onClick={() => setIsHovered(true)}
             tabIndex={0}
+            fill="freeze"
         >
             <title>sfw</title>
             <g id="Base" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">

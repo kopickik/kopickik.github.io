@@ -12,7 +12,7 @@ const BoardD: React.FC<BoardProps> = ({ characters }) => {
   return (
     <div className="board-d">
       {rows.map((chars, i) => (
-        <div key={i} className={`grid grid-cols-5 justify-center`}>
+        <div key={i} className={`grid grid-cols-5 justify-center mb-8`}>
           {chars.map((char: Character) => (
             <CharacterCard key={char.id} character={char} />
           ))}
